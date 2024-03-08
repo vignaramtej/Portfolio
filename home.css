@@ -190,8 +190,14 @@ header {
     overflow: hidden;
 }
 .card:hover {
-    scale: 1.1;
-    transition: all .4s ease-in;
+    transform: scale(1.1);
+    transition: all .6s ease-in-out;
+}
+
+.card:hover #card-title {
+    transform: scale(1.2);
+    filter: drop-shadow(2px 4px #033431);
+    transition: all .3s ease-in;
 }
 .card_ed {
     margin-right: 40px;
