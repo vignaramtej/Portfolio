@@ -385,11 +385,6 @@ header {
         text-align: center;
     }
 }
-@media only screen and  (max-width: 440px) {
-    .content a {
-        font-size: 13px;
-    }
-}
 ::-webkit-scrollbar {
     width: 9px;
 }
