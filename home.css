@@ -28,15 +28,15 @@ a {
     color: inherit;
 }
 header {
-    position: fixed;
+    position:fixed;
     width: 100%;
     height: 80px;
     background: rgba(27, 27, 41, 0.825);
     display: flex;
     align-items: center;
+    z-index: 2;
     justify-content: space-between;
     padding: 0 50px;
-    z-index: 2;
 }
 .logo {
     font-size: 25px;
@@ -154,7 +154,6 @@ header {
     position: relative;
     margin-top: 29px;
     justify-content: center;
-    z-index: 1;
     /* background-color: #0feadb; */
 }
 .cardskil {
@@ -184,7 +183,6 @@ header {
     min-height: 120px;
     padding: 18px;
     background-color: #000;
-    z-index: 2;
     position: relative;
     box-shadow: 0px 0px 5px 10px rgba(21, 21, 34, 0.712);
     cursor: pointer;
@@ -198,9 +196,9 @@ header {
 
 .card:hover #card-title {
     transform: scale(1.2);
-    filter: drop-shadow(2px 4px #033431);
     transition: all .3s ease-in;
 }
+ 
 .card_ed {
     margin-right: 40px;
     width: 350px;
@@ -446,6 +444,7 @@ footer #year {
 .titles {
     display: flex;
     flex-direction: row;
+    
 }
 .pro-content {
     display: grid;
