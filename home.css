@@ -451,6 +451,7 @@ footer #year {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 60px;
+    transition: all 0.1s ease-in-out;
 }
 .content a {
     background-color: white;
