@@ -86,8 +86,12 @@ header {
     padding-bottom: 0px;
     line-height: 60px;
 }
+.me span {
+    font-size: 20px;
+    margin: 0 100px;
+}
 .me img {
-    width: 60%;
+    width: 40%;
     padding: 7px 7px;
     overflow: hidden;
     border-radius: 50%;
@@ -351,10 +355,26 @@ header {
         justify-content: center;
         padding: 50px;
     }
+    .me img {
+        border: 1px solid rgba(255, 255, 255, 0.808);
+        width: 80%;
+    }
     .me h1 {
         font-size: 33px;
         padding: 70px;
+        padding-bottom: 0px;
         line-height: 40px;
+    }
+    .me span {
+        font-size: 20px;
+        width: 20rem;
+    }
+    .me div {
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 @media only screen and (max-width: 835px) {
