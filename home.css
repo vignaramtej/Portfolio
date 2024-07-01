@@ -83,6 +83,7 @@ header {
 .me h1 {
     font-size: 40px;
     padding: 100px;
+    padding-bottom: 0px;
     line-height: 60px;
 }
 .me img {
