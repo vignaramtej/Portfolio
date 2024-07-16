@@ -16,7 +16,6 @@ html {
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
     display: flex;
     flex-direction: column;
     background-color: var(--bg);
@@ -100,7 +99,6 @@ header {
 .me img {
     width: 40%;
     padding: 16px;
-    overflow: hidden;
     border-radius: 50%;
     border: 6px solid rgba(255, 255, 255, 0.808);
     background: var(--card-color);
@@ -142,11 +140,11 @@ header {
 .contact {
     letter-spacing: 1px;
     display: flex;
+    width: auto;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 60px;
-    margin: 50px 150px;
 }
 #resume {
     margin-top: 30px;
@@ -311,11 +309,6 @@ header {
 }
 
 @media (max-width: 1370px) {
-    .card_ed,
-    .mypro {
-        margin-top: 50px;
-        margin-left: 50px;
-    }
     .cards {
         justify-content: center;
         align-items: center;
@@ -356,7 +349,7 @@ header {
         top: 80px;
         left: 0;
         right: 0;
-        width: 100vw;
+        width: 100%;
         background: #11101b;
         transition: 0.5s;
         overflow: hidden;
@@ -381,6 +374,15 @@ header {
         padding-bottom: 23px;
         border-bottom: 1px groove rgba(99, 99, 99, 0.651);
     }
+    .card {
+        padding: 10px;
+    }
+    .cards {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+    }
     .card > p {
         filter: brightness(3.6);
     }
@@ -388,7 +390,10 @@ header {
         filter: brightness(1.9);
     }
 }
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1000px) {
+    #hello {
+        display: none;
+    }
     .me {
         display: flex;
         flex-direction: column;
@@ -397,12 +402,11 @@ header {
         padding: 50px;
     }
     .me img {
-        border: 1px solid rgba(255, 255, 255, 0.808);
-        width: 80%;
+        border: 2px solid rgba(255, 255, 255, 0.808);
     }
     .me h1 {
         font-size: 33px;
-        padding: 70px;
+        padding: 10px;
         padding-bottom: 0px;
         line-height: 40px;
     }
@@ -417,34 +421,46 @@ header {
         justify-content: center;
         align-items: center;
     }
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    .card,
+    .edu-group {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .skill-wrapper {
+        flex-direction: column;
+    }
 }
-@media only screen and (max-width: 835px) {
+@media only screen and (max-width: 900px) {
     .cardskil {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4,1fr);
-        grid-row-gap: 19px;
-        place-items: center;
-    }
-}
-@media only screen and (max-width: 1127px) {
-    .image {
-        display: none;
-    }
-
-    .content {
-        height: auto;
-        width: 200%;
-    }
-}
-@media only screen and  (max-width: 515px) {
-    .pro-btns {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        width: 100%;
     }
-    .content a {
-        text-align: center;
+}
+@media only screen and (max-width: 835px) {
+    .me img {
+        padding: 5px;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+    .skill-wrapper {
+        flex-direction: row;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .me img {
+        width: 100%;
+    }
+    .me p {
+        padding: 0 ;
+    }
+    .skill-wrapper {
+        flex-direction: column;
     }
 }
 ::-webkit-scrollbar {
@@ -461,6 +477,7 @@ header {
 footer {
     background: rgba(27, 27, 41, 0.825);
     height: 15rem;
+    width: 100%;
     padding-top: 5rem;
 }
 footer p {
@@ -528,9 +545,8 @@ footer #year {
     box-shadow: 0px 0px 5px 10px rgb(26, 26, 35);
 }
 .contact-wrapper {
-    display: inline-flex;
+    display: flex;
     justify-content: space-evenly;
-    width: 100%;
 }
 .contact-group {
     display: flex;
@@ -538,6 +554,10 @@ footer #year {
     align-items: center;
 }
 #contact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     border-radius: 10px;
     width: 100%;
