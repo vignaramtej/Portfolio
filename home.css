@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@500&family=Raleway:wght@100;300&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@500&family=Raleway:wght@100;300;500&family=Roboto+Condensed&display=swap');
 * {
     list-style: none;
     box-sizing: border-box;
 }
 :root {
-    --bg: rgb(16, 16, 24);
-    --can: #0feadb;
+    --bg: #05051c;
+    --can: #C8ACD6;
+    --card-color: hsl(219, 32%, 12%);
     --gre: rgb(72, 255, 194);
 }
 html {
@@ -19,9 +20,8 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--bg);
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
     font-family: 'Raleway', sans-serif;
+    color: #ffffff;
 }
 a {
     text-decoration: none;
@@ -31,7 +31,8 @@ header {
     position:fixed;
     width: 100%;
     height: 80px;
-    background: rgba(27, 27, 41, 0.825);
+    background: transparent;
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     z-index: 2;
@@ -50,6 +51,7 @@ header {
 }
 .nav-bar ul {
     display: flex;
+    font-family: 'Raleway', sans-serif;
 }
 .nav-bar ul li a {
     position: relative;
@@ -78,7 +80,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 100px;
-    border-bottom: 0.8px groove rgba(128, 128, 128, 0.539);
 }
 .me h1 {
     font-size: 40px;
@@ -86,17 +87,23 @@ header {
     padding-bottom: 0px;
     line-height: 60px;
 }
-.me span {
+#myname {
+    color: var(--can);
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+.me p {
     font-size: 20px;
+    font-family: 'Raleway', sans-serif;
     margin: 0 100px;
 }
 .me img {
     width: 40%;
-    padding: 7px 7px;
+    padding: 16px;
     overflow: hidden;
     border-radius: 50%;
     border: 6px solid rgba(255, 255, 255, 0.808);
-    background: #11161a;
+    background: var(--card-color);
 }
 .about-content p {
     display: inline-block;
@@ -114,7 +121,7 @@ header {
     display: flex;
 }
 .about-content p a i {
-    padding: 0 10px;
+    padding: 0 20px;
     transition: all 0.2s ease-out;
 }
 .about-content p a i:hover {
@@ -123,20 +130,23 @@ header {
 .about h1,
 .skills h1,
 .projects h1,
-.educa h1 {
-    font-weight: 400;
+.educa h1,
+.contact h1 {
+    font-weight: 500;
     color: var(--can);
 }
 .about,
 .skills,
 .projects,
-.educa {
+.educa,
+.contact {
+    letter-spacing: 1px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 60px;
-    border-bottom: 0.8px groove rgba(128, 128, 128, 0.311);
+    margin: 50px 150px;
 }
 #resume {
     margin-top: 30px;
@@ -155,24 +165,42 @@ header {
 }
 .cards {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     position: relative;
     margin-top: 29px;
     justify-content: center;
-    /* background-color: #0feadb; */
+}
+.edu-group {
+    text-align: center;
+    border-radius: 30px;
+    padding: 40px;
+    background: var(--card-color);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    margin: 30px;
+    font-family: 'Poppins', sans-serif;
+    min-height: max-content;
+}
+.edu-group h3,
+.edu-group h4 {
+    margin: 0;
+}
+.edu-group h3 {
+    color: var(--can);
 }
 .cardskil {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 104px;
-    grid-row-gap: 19px;
+    grid-column-gap: 52px;
+    grid-row-gap: 52px;
     place-items: center;
+    margin: 20px;
 }
 #card-title {
     color: var(--can);
-    font-size: 17px;
-    font-weight: 800;
+    font-size: 24px;
+    margin-bottom: 0;
 }
 #lang { 
     background-color: #1d1b34b3;
@@ -182,28 +210,41 @@ header {
     border-radius: 6px;
 }
 .card {
-    margin-right: 40px;
-    border-radius: 10px;
+    text-align: center;
+    border-radius: 30px;
     width: 100%;
-    min-height: 120px;
-    padding: 18px;
-    background-color: #000;
+    padding: 40px;
+    background: var(--card-color);
+    backdrop-filter: blur(20px);
     position: relative;
-    box-shadow: 0px 0px 5px 10px rgba(21, 21, 34, 0.712);
-    cursor: pointer;
     transition: all .3s ease-in-out;
     overflow: hidden;
 }
-.card:hover {
+/* .card:hover {
     transform: scale(1.1);
     transition: all .6s ease-in-out;
+} */
+.skill {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
-
-.card:hover #card-title {
-    transform: scale(1.2);
-    transition: all .3s ease-in;
+.skill-wrapper {
+    display: inline-flex;
 }
- 
+.skills-group {
+    margin: 0 28px;
+}
+.skill-content {
+    margin: 8px;
+}
+.skill-content h3,
+.skill-content p {
+    margin: 10px;
+}
+.techs {
+    display: flex; flex-direction: column; flex-wrap: wrap;
+}
 .card_ed {
     margin-right: 40px;
     width: 350px;
@@ -467,12 +508,6 @@ footer #year {
     flex-direction: row;
     
 }
-.pro-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 60px;
-}
 .content a {
     background-color: white;
     color: #000;
@@ -491,4 +526,58 @@ footer #year {
 }
 #image {
     box-shadow: 0px 0px 5px 10px rgb(26, 26, 35);
+}
+.contact-wrapper {
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.contact-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#contact-card {
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px 40px;
+    background: var(--card-color);
+    backdrop-filter: blur(20px);
+    margin: 10px;
+}
+.contact-group a {
+    color: var(--can);
+}
+.contact-left {
+    margin: 20px;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+.contact-left label {
+    display: none;
+}
+.contact-left input,
+textarea {
+    background: transparent;
+    color: white;
+    border: 2px solid grey;
+    margin: 0 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 28rem;
+    height: 72px;
+    font-size: 15px;
+}
+.contact-left button {
+    background: var(--can);
+    padding: 16px 40px;
+    font-size: large;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+textarea {
+    resize: none;
+    height: 280px;
 }
