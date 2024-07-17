@@ -115,9 +115,6 @@ header {
     display: flex;
     align-items: center;
 }
-#contact {
-    display: flex;
-}
 .about-content p a i {
     padding: 0 20px;
     transition: all 0.2s ease-out;
@@ -140,7 +137,6 @@ header {
 .contact {
     letter-spacing: 1px;
     display: flex;
-    width: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -381,7 +377,6 @@ header {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-
     }
     .card > p {
         filter: brightness(3.6);
@@ -390,6 +385,7 @@ header {
         filter: brightness(1.9);
     }
 }
+
 @media only screen and (max-width: 1000px) {
     #hello {
         display: none;
@@ -412,7 +408,6 @@ header {
     }
     .me span {
         font-size: 20px;
-        width: 20rem;
     }
     .me div {
         margin-bottom: 40px;
@@ -423,28 +418,36 @@ header {
     }
     .contact-wrapper {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .card,
     .edu-group {
-        width: 100%;
         margin: 10px 0;
     }
     .skill-wrapper {
         flex-direction: column;
     }
 }
+
 @media only screen and (max-width: 900px) {
     .cardskil {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
+    .skill-wrapper {
+        flex-direction: row;
+    }
 }
+
 @media only screen and (max-width: 835px) {
     .me img {
         padding: 5px;
     }
-
+    footer {
+        font-size: 12px;
+    }
     .card {
         flex-direction: column;
     }
@@ -452,12 +455,30 @@ header {
         flex-direction: row;
     }
 }
+
 @media only screen and (max-width: 550px) {
     .me img {
         width: 100%;
     }
     .me p {
-        padding: 0 ;
+        padding: 0;
+    }
+    .contact {
+        padding: 0px;
+    }
+    .contact-wrapper {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+    #contact-card {
+        margin: 10px 0; /* Adding vertical margin for spacing */
+        padding: 15px 20px; /* Adjusting padding for smaller screens */
+    }
+    .contact-left input,
+    textarea {
+        width: 100%; /* Use a percentage for responsiveness */
+        height: auto; /* Allow height to adjust based on content */
     }
     .skill-wrapper {
         flex-direction: column;
@@ -546,12 +567,16 @@ footer #year {
 }
 .contact-wrapper {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
 }
 .contact-group {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 90%;
+    max-width: 28rem;
 }
 #contact-card {
     display: flex;
@@ -569,25 +594,24 @@ footer #year {
 .contact-group a {
     color: var(--can);
 }
+form {
+    width: 100%;
+}
 .contact-left {
-    margin: 20px;
+    margin: 10px 0;
+    width: 100%;
     font-family: "Poppins", sans-serif;
     letter-spacing: 1px;
     font-size: 15px;
-}
-.contact-left label {
-    display: none;
 }
 .contact-left input,
 textarea {
     background: transparent;
     color: white;
     border: 2px solid grey;
-    margin: 0 10px;
     border-radius: 10px;
     padding: 10px;
-    width: 28rem;
-    height: 72px;
+    width: 100%;
     font-size: 15px;
 }
 .contact-left button {
