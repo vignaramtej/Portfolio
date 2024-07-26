@@ -24,39 +24,45 @@
   <body>
     <header>
       <div class="logo">Vigna Ramtej</div>
-      <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+      <div class="header-right">
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+          <ul>
+            <li>
+              <a href="#me">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#skill">Skills</a>
+            </li>
+            <!-- <li>
+                  <a href="">Services</a>
+              </li> -->
+            <li>
+              <a href="#edu">Education</a>
+            </li>
+            <!-- <li>
+                  <a href="">Experience</a>
+              </li> -->
+            <li>
+              <a href="#project">Projects</a>
+            </li>
+            <li>
+              <a href="#achieve">Achievements</a>
+            </li>
+          </ul>
+        </nav>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round" onclick="changeMode()"></span>
+        </label>
       </div>
-      <nav class="nav-bar">
-        <ul>
-          <li>
-            <a href="#me">Home</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#skill">Skills</a>
-          </li>
-          <!-- <li>
-                <a href="">Services</a>
-            </li> -->
-          <li>
-            <a href="#edu">Education</a>
-          </li>
-          <!-- <li>
-                <a href="">Experience</a>
-            </li> -->
-          <li>
-            <a href="#project">Projects</a>
-          </li>
-          <li>
-            <a href="#achieve">Achievements</a>
-          </li>
-        </ul>
-      </nav>
     </header>
     <div class="container">
       <div class="me" id="me">
@@ -85,19 +91,19 @@
               id="insta"
               href="https://www.instagram.com/_.v._r._t._/"
               target="_blank"
-              ><i class="fa-brands fa-instagram" style="color: #ffffff"></i
+              ><i class="fa-brands fa-instagram"></i
             ></a>
             <a
               id="linkedin"
               href="https://www.linkedin.com/in/vignaramtej-telagarapu/"
               target="_blank"
-              ><i class="fa-brands fa-linkedin-in" style="color: #ffffff"></i
+              ><i class="fa-brands fa-linkedin-in"></i
             ></a>
             <a id="git" href="https://github.com/vignaramtej" target="_blank"
-              ><i class="fa-brands fa-github" style="color: #ffffff"></i
+              ><i class="fa-brands fa-github"></i
             ></a>
             <a id="mail" href="mailto:ramtejsriram4@gmail.com" target="_blank"
-              ><i class="fa-brands fa-google" style="color: #ffffff"></i
+              ><i class="fa-brands fa-google"></i
             ></a>
           </p>
         </div>
@@ -423,7 +429,6 @@
                   id="aboutpro"
                   style="
                     font-size: 1em;
-                    color: #fff;
                     font-weight: 300;
                     text-shadow: rgba(192, 192, 192, 0.587);
                   "
@@ -504,6 +509,7 @@
     <script>
       let aboutpro = document.getElementById("aboutpro");
       let code = document.getElementById("code");
+
       function weather() {
         aboutpro.innerText = `We will get the current weather data from RapidAPI and display the weather information like Temperature, Weather condition, Humidity and Wind Speed according to the city on our website or app. We will display the weather info on website from Free API using JavaScript. In this weather app we will add one search box where user can enter the city name and get the weather information of the particular city.`;
         code.href =
@@ -513,6 +519,10 @@
         aboutpro.innerText = `Developed a console-based Tic-Tac-Toe game in Python with both single-player and multiplayer modes. Implemented an AI player using the Minimax algorithm for intelligent move selection. Designed an intuitive user interface for seamless player interaction, providing a clear board view. Managed player turns, performed move validations, and ensured win/draw condition checks for smooth gameplay. Integrated Minimax algorithm to enhance AI player's strategic decision-making. Leveraged various data structures and algorithms for efficient move analysis`;
         code.href =
           "https://github.com/vignaramtej/vignaramtej/blob/main/tic_tac_toe.py";
+      }
+      function changeMode() {
+        var element = document.body;
+        element.classList.toggle("light-mode");
       }
     </script>
   </body>
